@@ -14,6 +14,7 @@
 		DB68B1C82691E13E00D49B68 /* PracticeCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB68B1C62691E13E00D49B68 /* PracticeCoreData.xcdatamodeld */; };
 		DB68B1CA2691E13F00D49B68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB68B1C92691E13F00D49B68 /* Assets.xcassets */; };
 		DB68B1CD2691E13F00D49B68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB68B1CB2691E13F00D49B68 /* LaunchScreen.storyboard */; };
+		DB68B1D52691E18C00D49B68 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB68B1D42691E18C00D49B68 /* Container.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DB68B1C92691E13F00D49B68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB68B1CC2691E13F00D49B68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB68B1CE2691E13F00D49B68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB68B1D42691E18C00D49B68 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				DB68B1BD2691E13E00D49B68 /* AppDelegate.swift */,
 				DB68B1BF2691E13E00D49B68 /* SceneDelegate.swift */,
 				DB68B1C12691E13E00D49B68 /* ViewController.swift */,
+				DB68B1D42691E18C00D49B68 /* Container.swift */,
 				DB68B1C32691E13E00D49B68 /* Main.storyboard */,
 				DB68B1C92691E13F00D49B68 /* Assets.xcassets */,
 				DB68B1CB2691E13F00D49B68 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			files = (
 				DB68B1C22691E13E00D49B68 /* ViewController.swift in Sources */,
 				DB68B1BE2691E13E00D49B68 /* AppDelegate.swift in Sources */,
+				DB68B1D52691E18C00D49B68 /* Container.swift in Sources */,
 				DB68B1C02691E13E00D49B68 /* SceneDelegate.swift in Sources */,
 				DB68B1C82691E13E00D49B68 /* PracticeCoreData.xcdatamodeld in Sources */,
 			);

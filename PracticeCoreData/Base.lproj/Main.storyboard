@@ -1,24 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PracticeCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="hNZ-wb-Ps6">
+                                <rect key="frame" x="83" y="433" width="248" height="30"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYb-Ts-Kt8">
+                                <rect key="frame" x="192.5" y="94" width="29" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qgY-lp-0Uw">
+                                <rect key="frame" x="63" y="184.5" width="288" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPY-gr-1jc">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
+                                        <state key="normal" title="changeLastPersonToCheckCombine">
+                                            <color key="titleColor" red="0.2478628755" green="0.54350632430000001" blue="0.63530832530000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeLastPersonWithCombine:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vvr-D4-7XY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8B-YX-nwy">
+                                        <rect key="frame" x="0.0" y="30" width="288" height="30"/>
+                                        <state key="normal" title="fetchLastPersonToSetLabelUsingCombine">
+                                            <color key="titleColor" red="0.2478628755" green="0.54350632430000001" blue="0.63530832530000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="fetchLastPersonToSetLabelWithCombine:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n6x-fh-4Er"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLm-iU-a6h">
+                                        <rect key="frame" x="0.0" y="60" width="288" height="30"/>
+                                        <state key="normal" title="fetch All Person"/>
+                                        <connections>
+                                            <action selector="fetchAllPerson:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yJR-j6-vtT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJB-3O-rBV">
+                                        <rect key="frame" x="0.0" y="90" width="288" height="30"/>
+                                        <state key="normal" title="fetch Nations"/>
+                                        <connections>
+                                            <action selector="fetchNation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQf-gu-ZXn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lPz-HK-Q9V">
+                                <rect key="frame" x="76" y="309.5" width="262" height="240"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1P-2l-unh">
+                                        <rect key="frame" x="0.0" y="0.0" width="262" height="30"/>
+                                        <state key="normal" title="deleteAll">
+                                            <color key="titleColor" red="0.92156862750000001" green="0.31764705879999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2uh-Bk-Zdr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sla-AV-5Yc">
+                                        <rect key="frame" x="0.0" y="30" width="262" height="30"/>
+                                        <state key="normal" title="deleteLastPerson">
+                                            <color key="titleColor" red="0.92156862750000001" green="0.31764705879999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteLastPerson:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wZR-rG-gUj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHO-rv-Z1b">
+                                        <rect key="frame" x="0.0" y="60" width="262" height="30"/>
+                                        <state key="normal" title="deleteLastNation">
+                                            <color key="titleColor" red="0.92156862750000001" green="0.31764705879999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteLastNation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wsy-Gb-Nwd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfQ-x6-C9c">
+                                        <rect key="frame" x="0.0" y="90" width="262" height="30"/>
+                                        <state key="normal" title="1.setNations"/>
+                                        <connections>
+                                            <action selector="setNation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tGY-cp-uFn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ix-R5-eo0">
+                                        <rect key="frame" x="0.0" y="120" width="262" height="30"/>
+                                        <state key="normal" title="2.addWithKorean"/>
+                                        <connections>
+                                            <action selector="addWithKorean:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NAo-tB-H7m"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bem-0i-NbI">
+                                        <rect key="frame" x="0.0" y="150" width="262" height="30"/>
+                                        <state key="normal" title="2.addWithAmerican"/>
+                                        <connections>
+                                            <action selector="addWithAmerican:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eGL-6t-b6I"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zvv-7P-9Qi">
+                                        <rect key="frame" x="0.0" y="180" width="262" height="30"/>
+                                        <state key="normal" title="2.addWithChinese"/>
+                                        <connections>
+                                            <action selector="addWithChinese:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7kd-kS-UKD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Do-Yv-B6O">
+                                        <rect key="frame" x="0.0" y="210" width="262" height="30"/>
+                                        <state key="normal" title="2.addKoreanUsingBackgroundContext"/>
+                                        <connections>
+                                            <action selector="addKoreanUsingBackgroundContext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xLR-0G-9qf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lPz-HK-Q9V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8p0-ML-SoB"/>
+                            <constraint firstItem="qgY-lp-0Uw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AAd-CB-5FU"/>
+                            <constraint firstItem="hNZ-wb-Ps6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AJc-vt-lTE"/>
+                            <constraint firstItem="hNZ-wb-Ps6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GjX-vb-OJZ"/>
+                            <constraint firstItem="TYb-Ts-Kt8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Rp4-Ks-PJu"/>
+                            <constraint firstItem="qgY-lp-0Uw" firstAttribute="top" secondItem="TYb-Ts-Kt8" secondAttribute="bottom" constant="70" id="e4J-vy-5Fc"/>
+                            <constraint firstItem="TYb-Ts-Kt8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fc9-RU-b7e"/>
+                            <constraint firstItem="hNZ-wb-Ps6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kh0-v7-8p3"/>
+                            <constraint firstItem="lPz-HK-Q9V" firstAttribute="top" secondItem="qgY-lp-0Uw" secondAttribute="bottom" constant="5" id="yr2-75-uJt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lastLabel" destination="TYb-Ts-Kt8" id="1R8-gZ-gCJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="54" y="72"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
