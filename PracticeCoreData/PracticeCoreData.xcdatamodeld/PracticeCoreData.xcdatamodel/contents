@@ -6,11 +6,12 @@
         <relationship name="persons" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Person" inverseName="nation" inverseEntity="Person"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
+        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="nation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Nation" inverseName="persons" inverseEntity="Nation"/>
     </entity>
     <elements>
-        <element name="Person" positionX="128.9765625" positionY="12.875" width="128" height="73"/>
         <element name="Nation" positionX="-54" positionY="9" width="115.43359375" height="88"/>
+        <element name="Person" positionX="128.9765625" positionY="12.875" width="128" height="88"/>
     </elements>
 </model>

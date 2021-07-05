@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qgY-lp-0Uw">
-                                <rect key="frame" x="63" y="184.5" width="288" height="120"/>
+                                <rect key="frame" x="63" y="119.5" width="288" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPY-gr-1jc">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
@@ -60,10 +60,17 @@
                                             <action selector="fetchNation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQf-gu-ZXn"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IA6-Mj-PFc">
+                                        <rect key="frame" x="0.0" y="120" width="288" height="30"/>
+                                        <state key="normal" title="fetchPersonCountGropedByAge"/>
+                                        <connections>
+                                            <action selector="fetchPersonCountGroupedByAge" destination="BYZ-38-t0r" eventType="touchUpInside" id="hqb-CV-wv4"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lPz-HK-Q9V">
-                                <rect key="frame" x="76" y="309.5" width="262" height="240"/>
+                                <rect key="frame" x="76" y="274.5" width="262" height="270"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1P-2l-unh">
                                         <rect key="frame" x="0.0" y="0.0" width="262" height="30"/>
@@ -99,29 +106,36 @@
                                             <action selector="setNation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tGY-cp-uFn"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ix-R5-eo0">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a66-U6-H7F">
                                         <rect key="frame" x="0.0" y="120" width="262" height="30"/>
+                                        <state key="normal" title="1. setPersonsRandomTo1000"/>
+                                        <connections>
+                                            <action selector="setPersonRandomTo1000:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3qu-WF-URO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ix-R5-eo0">
+                                        <rect key="frame" x="0.0" y="150" width="262" height="30"/>
                                         <state key="normal" title="2.addWithKorean"/>
                                         <connections>
                                             <action selector="addWithKorean:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NAo-tB-H7m"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bem-0i-NbI">
-                                        <rect key="frame" x="0.0" y="150" width="262" height="30"/>
+                                        <rect key="frame" x="0.0" y="180" width="262" height="30"/>
                                         <state key="normal" title="2.addWithAmerican"/>
                                         <connections>
                                             <action selector="addWithAmerican:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eGL-6t-b6I"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zvv-7P-9Qi">
-                                        <rect key="frame" x="0.0" y="180" width="262" height="30"/>
+                                        <rect key="frame" x="0.0" y="210" width="262" height="30"/>
                                         <state key="normal" title="2.addWithChinese"/>
                                         <connections>
                                             <action selector="addWithChinese:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7kd-kS-UKD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Do-Yv-B6O">
-                                        <rect key="frame" x="0.0" y="210" width="262" height="30"/>
+                                        <rect key="frame" x="0.0" y="240" width="262" height="30"/>
                                         <state key="normal" title="2.addKoreanUsingBackgroundContext"/>
                                         <connections>
                                             <action selector="addKoreanUsingBackgroundContext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xLR-0G-9qf"/>
@@ -138,7 +152,7 @@
                             <constraint firstItem="hNZ-wb-Ps6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AJc-vt-lTE"/>
                             <constraint firstItem="hNZ-wb-Ps6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GjX-vb-OJZ"/>
                             <constraint firstItem="TYb-Ts-Kt8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Rp4-Ks-PJu"/>
-                            <constraint firstItem="qgY-lp-0Uw" firstAttribute="top" secondItem="TYb-Ts-Kt8" secondAttribute="bottom" constant="70" id="e4J-vy-5Fc"/>
+                            <constraint firstItem="qgY-lp-0Uw" firstAttribute="top" secondItem="TYb-Ts-Kt8" secondAttribute="bottom" constant="5" id="e4J-vy-5Fc"/>
                             <constraint firstItem="TYb-Ts-Kt8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fc9-RU-b7e"/>
                             <constraint firstItem="hNZ-wb-Ps6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kh0-v7-8p3"/>
                             <constraint firstItem="lPz-HK-Q9V" firstAttribute="top" secondItem="qgY-lp-0Uw" secondAttribute="bottom" constant="5" id="yr2-75-uJt"/>

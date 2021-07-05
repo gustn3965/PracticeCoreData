@@ -59,6 +59,7 @@ class ViewController: UIViewController {
         let request = NSFetchRequest<Person>(entityName: "Person")
         viewContext.perform { [self] in
             person = try! request.execute().first
+            
             self.cancellable = person?.publisher(for: \.name)
                 .assign(to: \.text, on: self.lastLabel)
         }
@@ -66,14 +67,14 @@ class ViewController: UIViewController {
 
     //MARK: - Fetch
     @IBAction func fetchAllPerson(_ sender: Any) {
-        let request = NSFetchRequest<Person>(entityName: "Person")
-        var str = ""
+        let request: NSFetchRequest<NSFetchRequestResult> = Person.fetchRequest()
+        request.resultType = .countResultType
         viewContext.perform { [self] in
-            let list = try! request.execute()
-            str = "People: \(list.count)"
-            lastLabel.text = str
+            let count = try? viewContext.fetch(request).last
+            lastLabel.text = "People: \(count!)"
         }
     }
+
     @IBAction func fetchNation(_ sender: Any ) {
         let request = NSFetchRequest<Nation>(entityName: "Nation")
         var str = ""
@@ -83,35 +84,64 @@ class ViewController: UIViewController {
                 str += "\($0.country!): \($0.personCount) | \($0.persons!.count)\n"
             }
             lastLabel.text = str
+            print("completed")
         }
-        
+        print("hello")
+    }
+    
+    @IBAction func fetchPersonCountGroupedByAge() {
+        viewContext.perform { [self] in
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+            request.propertiesToGroupBy = ["age"]
+            request.resultType = .dictionaryResultType
+            
+            let description = NSExpressionDescription()
+            description.expression = NSExpression(forFunction: "count:", arguments: [NSExpression(forKeyPath: "age")])
+            description.name = "count"
+            description.expressionResultType = .integer16AttributeType
+            
+            request.propertiesToFetch = ["age", description]
+            
+            let result = try? viewContext.fetch(request) as? [[String: Int]]
+            var str = ""
+            result!.forEach {
+                str += "age: \($0["age"]!), count: \($0["count"]!)\n"
+            }
+            lastLabel.text = str
+        }
     }
 
     //MARK: - add
     @IBAction func addWithKorean(_ sender: Any) {
-        addPerson(country: "korea", context: viewContext)
+        addPerson(country: "korea", by: viewContext)
     }
 
     @IBAction func addWithAmerican(_ sender: Any) {
-        addPerson(country: "america", context: viewContext)
+        addPerson(country: "america", by: viewContext)
     }
 
     @IBAction func addWithChinese(_ sender: Any) {
-        addPerson(country: "china", context: viewContext)
+        addPerson(country: "china", by: viewContext)
     }
     
-    func addPerson( country: String, context: NSManagedObjectContext) {
-        context.perform  { [self ] in
+    /// Create person who has random age and random name
+    func addPerson( country: String, by context: NSManagedObjectContext) {
+        context.perform  { 
+            let randomList = "abcdefghijklmn".map{String($0)}
+            var randomName = ""
+            for _ in 0..<10 {
+                randomName += randomList.randomElement()!
+            }
             let person = Person(context: context)
-            let request = NSFetchRequest<Nation>(entityName: "Nation")
+            person.age = (20...25).randomElement()!
             
+            let request = NSFetchRequest<Nation>(entityName: "Nation")
             let list = try? context.fetch(request)
             list?.forEach{
                 if $0.country == country {
                     person.nation = $0
                 } else { return }
             }
-            person.name = "vapor"
             try? context.save()
         }
     }
@@ -128,10 +158,16 @@ class ViewController: UIViewController {
             
         }
     }
+    @IBAction func setPersonRandomTo1000(_ sender: Any) {
+        for _ in 0..<1000 {
+            let country = ["korea","america","china"].randomElement()!
+            addPerson(country: country, by: backgroundContext)
+        }
+    }
     
     @IBAction func addKoreanUsingBackgroundContext(_ sender: Any) {
         backgroundContext.perform { [self] in
-            addPerson(country: "korea", context: backgroundContext)
+            addPerson(country: "korea", by: backgroundContext)
         }
     }
     
@@ -149,7 +185,6 @@ class ViewController: UIViewController {
                 viewContext.delete($0)
             }
             list?.removeAll()
-            
             try? viewContext.save()
         }
     }
